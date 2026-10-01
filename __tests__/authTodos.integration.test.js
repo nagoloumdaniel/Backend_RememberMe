@@ -18,8 +18,9 @@ const clearDatabase = async () => {
 beforeAll(async () => {
   process.env.JWT_SECRET = process.env.JWT_SECRET || 'test_jwt_secret';
   mongoServer = await MongoMemoryServer.create();
+  process.env.MONGODB_URI = mongoServer.getUri();
   await mongoose.connect(mongoServer.getUri());
-  app = require('../server');
+  app = require('../api/server');
 });
 
 afterEach(async () => {
