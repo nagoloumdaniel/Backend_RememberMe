@@ -1,21 +1,19 @@
-# Security Policy
+# Politique de sécurité
 
-## Supported Versions
+## Versions concernées
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+RememberMe est déployé en continu depuis la branche `main`. Seule la dernière version de `main` (celle qui est en production) reçoit des correctifs.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+## Signaler une vulnérabilité
 
-## Reporting a Vulnerability
+Merci de **ne pas ouvrir d'issue publique** pour un problème de sécurité.
 
-Use this section to tell people how to report a vulnerability.
+Utilisez le signalement privé de GitHub : onglet **Security** du dépôt, puis **Report a vulnerability** (https://github.com/nagoloumdaniel/Backend_RememberMe/security/advisories/new).
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+Merci d'indiquer : la zone concernée, les étapes de reproduction, l'impact estimé. Ne joignez jamais de vrais mots de passe, jetons ou chaînes de connexion.
+
+Il s'agit d'un projet personnel maintenu par une seule personne : accusé de réception visé sous quelques jours, sans délai de correction garanti.
+
+## Secrets
+
+Aucun secret ne doit être commité. Les variables d'environnement (`MONGODB_URI`, `JWT_SECRET`, `VITE_API_URL`) se configurent localement dans un fichier `.env` ignoré par Git, et sur Vercel pour la production. Si vous constatez qu'un secret est exposé dans le dépôt, signalez-le par le canal privé ci-dessus.
